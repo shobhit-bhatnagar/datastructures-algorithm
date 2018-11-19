@@ -10,6 +10,30 @@ import util.WeightedGraph.Vertex;
 
 public class DisjktraShortestPath {
 
+	/**
+	 * 
+	 * @param graph
+	 * @param sourceVertex
+	 * @return
+	 *  Algorithm
+	 *  Initialize one map for vertex to distance (from source to that vertex distance)
+	 *  Initialize parent (Vertex to parent vertex)
+	 *  Initialize heap
+	 *  set heap (source vertex as zero)
+	 *  set parent(source vertex as null)
+	 *  while heap is not empty
+	 *  extract min node
+	 *  get current vertex
+	 *  distance map(current vertex, current.weight) distance to reach current vertex from source vertex
+	 *  explore all edges of current vertex
+	 *  if contains in heap
+	 *  update distance to this vertex from source vertex to current distance + weight of edge
+	 *  if(heap.getWeight(adjacent) is greater than new distance
+	 *  then update heap with new value for that node 
+	 *  and update parent to source map
+	 *  
+	 *  return distance map
+	 */
 	
 	 public Map<Vertex<Integer>,Integer> shortestPath(WeightedGraph<Integer> graph, Vertex<Integer> sourceVertex){
 		 
@@ -30,7 +54,7 @@ public class DisjktraShortestPath {
 		 {
 			Node<Vertex<Integer>> node = heap.extractMinNode();
 			Vertex<Integer> current = node.key;
-			 distance.put(current, node.weight);
+			distance.put(current, node.weight);
 			 
 			 for(Edge<Integer> edge :current.getEdges())
 			 {

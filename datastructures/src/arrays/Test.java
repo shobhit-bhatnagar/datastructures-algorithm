@@ -76,9 +76,9 @@ class Test
         }
         new Test().notifyAll();
         return diff;
-        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-        .map(Long::parseLong)
-        .collect(toList());
+        //Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+        //.map(Long::parseLong)
+        //.collect(toList());
     }
     
     static int flatlandSpaceStations(int n, int[] c) {
